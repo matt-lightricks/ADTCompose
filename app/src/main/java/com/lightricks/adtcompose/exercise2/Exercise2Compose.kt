@@ -19,10 +19,8 @@ fun Exercise2Screen() {
         var text by remember { mutableStateOf("") }
 
         LazyColumn {
-            items(3) {
-                Text("Suggestion 1")
-                Text("Suggestion 2")
-                Text("Suggestion 3")
+            items(3) { index ->
+                Text("Suggestion $index")
             }
         }
         BasicTextField(value = text, onValueChange = { text = it })
